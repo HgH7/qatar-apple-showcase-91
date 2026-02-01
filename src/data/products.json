@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "slug": "iphone-15-pro-max",
+    "name": {
+      "en": "iPhone 15 Pro Max",
+      "ar": "آيفون 15 برو ماكس"
+    },
+    "category": "phones",
+    "price": 4899,
+    "isNew": true,
+    "isFeatured": true,
+    "images": [
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["A17 Pro chip", "Titanium design", "48MP main camera", "5x optical zoom", "Action button"],
+      "ar": ["شريحة A17 Pro", "تصميم تيتانيوم", "كاميرا رئيسية 48 ميجابكسل", "تقريب بصري 5x", "زر الإجراء"]
+    },
+    "description": {
+      "en": "The most powerful iPhone ever with a titanium design and the most advanced camera system.",
+      "ar": "أقوى آيفون على الإطلاق بتصميم تيتانيوم ونظام كاميرا متطور."
+    }
+  },
+  {
+    "id": 2,
+    "slug": "macbook-pro-16",
+    "name": {
+      "en": "MacBook Pro 16\"",
+      "ar": "ماك بوك برو 16 إنش"
+    },
+    "category": "laptops",
+    "price": 12999,
+    "isNew": true,
+    "isFeatured": true,
+    "images": [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["M3 Max chip", "36GB unified memory", "1TB SSD", "Liquid Retina XDR", "22-hour battery"],
+      "ar": ["شريحة M3 Max", "ذاكرة موحدة 36 جيجابايت", "تخزين 1 تيرابايت", "شاشة Liquid Retina XDR", "بطارية 22 ساعة"]
+    },
+    "description": {
+      "en": "The most powerful MacBook Pro ever. Built for pros who need exceptional performance.",
+      "ar": "أقوى ماك بوك برو على الإطلاق. مصمم للمحترفين الذين يحتاجون أداءً استثنائياً."
+    }
+  },
+  {
+    "id": 3,
+    "slug": "ipad-pro-12-9",
+    "name": {
+      "en": "iPad Pro 12.9\"",
+      "ar": "آيباد برو 12.9 إنش"
+    },
+    "category": "tablets",
+    "price": 5299,
+    "isNew": false,
+    "isFeatured": true,
+    "images": [
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["M2 chip", "Liquid Retina XDR", "ProMotion 120Hz", "Face ID", "Thunderbolt port"],
+      "ar": ["شريحة M2", "شاشة Liquid Retina XDR", "تقنية ProMotion 120Hz", "Face ID", "منفذ Thunderbolt"]
+    },
+    "description": {
+      "en": "The ultimate iPad experience with M2 chip and stunning XDR display.",
+      "ar": "تجربة آيباد المثالية مع شريحة M2 وشاشة XDR المذهلة."
+    }
+  },
+  {
+    "id": 4,
+    "slug": "apple-watch-ultra-2",
+    "name": {
+      "en": "Apple Watch Ultra 2",
+      "ar": "ساعة أبل ألترا 2"
+    },
+    "category": "watches",
+    "price": 3199,
+    "isNew": true,
+    "isFeatured": false,
+    "images": [
+      "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["S9 SiP chip", "Titanium case", "100m water resistant", "Precision GPS", "36-hour battery"],
+      "ar": ["شريحة S9 SiP", "هيكل تيتانيوم", "مقاومة للماء 100 متر", "GPS دقيق", "بطارية 36 ساعة"]
+    },
+    "description": {
+      "en": "The most rugged and capable Apple Watch for exploration and adventure.",
+      "ar": "ساعة أبل الأكثر متانة وقدرة للاستكشاف والمغامرة."
+    }
+  },
+  {
+    "id": 5,
+    "slug": "airpods-pro-2",
+    "name": {
+      "en": "AirPods Pro 2",
+      "ar": "سماعات إيربودز برو 2"
+    },
+    "category": "headphones",
+    "price": 999,
+    "isNew": false,
+    "isFeatured": true,
+    "images": [
+      "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["H2 chip", "Active Noise Cancellation", "Adaptive Audio", "USB-C charging", "6-hour battery"],
+      "ar": ["شريحة H2", "إلغاء الضوضاء النشط", "صوت تكيفي", "شحن USB-C", "بطارية 6 ساعات"]
+    },
+    "description": {
+      "en": "Next-level Active Noise Cancellation and immersive Spatial Audio.",
+      "ar": "إلغاء ضوضاء متطور وصوت مكاني غامر."
+    }
+  },
+  {
+    "id": 6,
+    "slug": "macbook-air-15",
+    "name": {
+      "en": "MacBook Air 15\"",
+      "ar": "ماك بوك إير 15 إنش"
+    },
+    "category": "laptops",
+    "price": 6499,
+    "isNew": false,
+    "isFeatured": false,
+    "images": [
+      "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["M3 chip", "15.3\" Liquid Retina", "18-hour battery", "Fanless design", "1080p camera"],
+      "ar": ["شريحة M3", "شاشة 15.3 بوصة Liquid Retina", "بطارية 18 ساعة", "تصميم بدون مروحة", "كاميرا 1080p"]
+    },
+    "description": {
+      "en": "Impressively big. Impossibly thin. Stunningly powerful.",
+      "ar": "كبير بشكل مذهل. رفيع بشكل مستحيل. قوي بشكل مدهش."
+    }
+  },
+  {
+    "id": 7,
+    "slug": "iphone-15",
+    "name": {
+      "en": "iPhone 15",
+      "ar": "آيفون 15"
+    },
+    "category": "phones",
+    "price": 3499,
+    "isNew": true,
+    "isFeatured": false,
+    "images": [
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["A16 Bionic chip", "Dynamic Island", "48MP camera", "USB-C", "Ceramic Shield"],
+      "ar": ["شريحة A16 Bionic", "Dynamic Island", "كاميرا 48 ميجابكسل", "USB-C", "Ceramic Shield"]
+    },
+    "description": {
+      "en": "A total powerhouse with Dynamic Island and a 48MP camera.",
+      "ar": "قوة هائلة مع Dynamic Island وكاميرا 48 ميجابكسل."
+    }
+  },
+  {
+    "id": 8,
+    "slug": "airpods-max",
+    "name": {
+      "en": "AirPods Max",
+      "ar": "سماعات إيربودز ماكس"
+    },
+    "category": "headphones",
+    "price": 2199,
+    "isNew": false,
+    "isFeatured": false,
+    "images": [
+      "https://images.unsplash.com/photo-1625245488600-f03fef636a3c?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "en": ["H1 chip", "High-fidelity audio", "Active Noise Cancellation", "20-hour battery", "Aluminum design"],
+      "ar": ["شريحة H1", "صوت عالي الدقة", "إلغاء الضوضاء النشط", "بطارية 20 ساعة", "تصميم ألمنيوم"]
+    },
+    "description": {
+      "en": "A perfect balance of high-fidelity audio and effortless design.",
+      "ar": "توازن مثالي بين الصوت عالي الدقة والتصميم الأنيق."
+    }
+  }
+]

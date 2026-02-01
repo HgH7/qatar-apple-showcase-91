@@ -1,0 +1,59 @@
+{
+  "company": {
+    "name": "Advanced Solutions Trading Company",
+    "slogan": "Premium Apple Products for Qatar"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Premium Apple Products",
+    "subtitle": "Discover the latest Apple technology in Doha",
+    "cta": "Explore Products"
+  },
+  "featured": {
+    "title": "Featured Products",
+    "subtitle": "Handpicked selection of premium Apple devices"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Browse our complete collection",
+    "all": "All",
+    "phones": "Phones",
+    "laptops": "Laptops",
+    "tablets": "Tablets",
+    "watches": "Watches",
+    "headphones": "Headphones",
+    "new": "New",
+    "featured": "Featured",
+    "viewDetails": "View Details"
+  },
+  "product": {
+    "price": "Price",
+    "features": "Features",
+    "orderNow": "Order via WhatsApp",
+    "related": "Related Products"
+  },
+  "value": {
+    "warranty": {
+      "title": "Official Warranty",
+      "description": "Full manufacturer warranty on all products"
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "description": "Same-day delivery across Doha"
+    },
+    "corporate": {
+      "title": "Corporate Orders",
+      "description": "Special pricing for bulk orders"
+    }
+  },
+  "footer": {
+    "address": "Office 42, West Bay Financial Center, Doha, Qatar",
+    "rights": "All rights reserved",
+    "contact": "Contact Us"
+  },
+  "currency": "QAR"
+}
