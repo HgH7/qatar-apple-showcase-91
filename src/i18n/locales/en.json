@@ -55,5 +55,49 @@
     "rights": "All rights reserved",
     "contact": "Contact Us"
   },
-  "currency": "QAR"
+  "currency": "QAR",
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for corporate inquiries, bulk orders, or any questions about our products",
+    "whatsappIntro": "Hello, I would like to make an inquiry:",
+    "form": {
+      "title": "Send Inquiry",
+      "subtitle": "Fill out the form below",
+      "name": "Full Name",
+      "company": "Company Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "inquiryType": "Inquiry Type",
+      "message": "Message",
+      "submit": "Send via WhatsApp"
+    },
+    "inquiryTypes": {
+      "general": "General Inquiry",
+      "bulk": "Bulk Order",
+      "corporate": "Corporate Partnership"
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email"
+    },
+    "success": {
+      "title": "Inquiry Sent",
+      "description": "Your message has been opened in WhatsApp"
+    },
+    "info": {
+      "title": "Contact Information",
+      "phone": "Phone",
+      "email": "Email",
+      "address": "Address"
+    },
+    "corporate": {
+      "title": "Corporate Solutions",
+      "description": "We offer tailored solutions for businesses of all sizes with competitive pricing and dedicated support.",
+      "benefits": {
+        "pricing": "Volume-based pricing discounts",
+        "support": "Dedicated account manager",
+        "delivery": "Priority delivery scheduling"
+      }
+    }
+  }
 }
