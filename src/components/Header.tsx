@@ -51,14 +51,9 @@ const Header = () => {
     >
       <div className="section-container">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">AS</span>
-            </div>
-            <span className="hidden font-semibold text-foreground sm:block">
-              {t('company.name')}
-            </span>
+          {/* Company Name */}
+          <Link to="/" className="font-semibold text-foreground">
+            {t('company.name')}
           </Link>
 
           {/* Desktop Navigation */}
