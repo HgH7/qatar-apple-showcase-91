@@ -28,7 +28,9 @@
     "headphones": "Headphones",
     "new": "New",
     "featured": "Featured",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "searchPlaceholder": "Search products...",
+    "noResults": "No products found"
   },
   "product": {
     "price": "Price",

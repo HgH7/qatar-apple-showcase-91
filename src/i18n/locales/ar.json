@@ -28,7 +28,9 @@
     "headphones": "السماعات",
     "new": "جديد",
     "featured": "مميز",
-    "viewDetails": "عرض التفاصيل"
+    "viewDetails": "عرض التفاصيل",
+    "searchPlaceholder": "البحث عن المنتجات...",
+    "noResults": "لم يتم العثور على منتجات"
   },
   "product": {
     "price": "السعر",
