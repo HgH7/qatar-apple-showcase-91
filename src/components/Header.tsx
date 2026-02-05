@@ -37,7 +37,6 @@ const Header = () => {
   const navLinks = [
     { path: '/', label: t('nav.home') },
     { path: '/products', label: t('nav.products') },
-    { path: '/contact', label: t('nav.contact') },
   ];
 
   const isActive = (path: string) => {
