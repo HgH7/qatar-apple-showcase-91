@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Menu, X, Globe, Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import CartDrawer from '@/components/CartDrawer';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -82,6 +83,8 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+            <CartDrawer />
+
             <button
               onClick={toggleLanguage}
               className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"

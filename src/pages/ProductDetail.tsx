@@ -1,10 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Check, MessageCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Check, MessageCircle, ArrowLeft, ArrowRight, ShoppingCart } from 'lucide-react';
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import ProductCard from '@/components/ProductCard';
+import { Button } from '@/components/ui/button';
+import { useCart } from '@/contexts/CartContext';
+import { getProductOptions } from '@/data/productOptions';
+import { useToast } from '@/hooks/use-toast';
 import products from '@/data/products.json';
 
 const ProductDetail = () => {
@@ -12,9 +16,14 @@ const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
   const lang = i18n.language as 'en' | 'ar';
   const isRTL = lang === 'ar';
+  const { addItem } = useCart();
+  const { toast } = useToast();
 
   const product = products.find((p) => p.slug === id);
   const [activeImage, setActiveImage] = useState(0);
+  const [selectedColor, setSelectedColor] = useState<string>('');
+  const [selectedStorage, setSelectedStorage] = useState<string>('');
+  const [selectedSize, setSelectedSize] = useState<string>('');
 
   if (!product) {
     return (
@@ -33,14 +42,71 @@ const ProductDetail = () => {
     );
   }
 
+  const options = getProductOptions(product.category);
+  const hasOptions = options.colors || options.storage || options.sizes;
+
+  const isOptionsComplete = () => {
+    if (!hasOptions) return true;
+    if (options.colors && !selectedColor) return false;
+    if (options.storage && !selectedStorage) return false;
+    if (options.sizes && !selectedSize) return false;
+    return true;
+  };
+
+  const getSelectedProperties = () => {
+    const props: { color?: string; storage?: string; size?: string } = {};
+    if (selectedColor) {
+      const colorOption = options.colors?.find(c => c.value === selectedColor);
+      props.color = colorOption?.label[lang] || selectedColor;
+    }
+    if (selectedStorage) {
+      const storageOption = options.storage?.find(s => s.value === selectedStorage);
+      props.storage = storageOption?.label[lang] || selectedStorage;
+    }
+    if (selectedSize) {
+      const sizeOption = options.sizes?.find(s => s.value === selectedSize);
+      props.size = sizeOption?.label[lang] || selectedSize;
+    }
+    return props;
+  };
+
   const relatedProducts = products
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
-  const whatsappMessage = encodeURIComponent(
-    `Salam, I would like to inquire about: ${product.name.en} (ID: ${product.id})`
-  );
-  const whatsappUrl = `https://wa.me/97400000000?text=${whatsappMessage}`;
+  const handleAddToCart = () => {
+    if (!isOptionsComplete()) return;
+    
+    addItem({
+      productId: product.id,
+      productSlug: product.slug,
+      name: product.name,
+      price: product.price,
+      properties: getSelectedProperties(),
+      image: product.images[0],
+    });
+
+    toast({
+      title: t('cart.itemAdded'),
+      description: product.name[lang],
+    });
+  };
+
+  const handleWhatsAppOrder = () => {
+    if (!isOptionsComplete()) return;
+    
+    const props = getSelectedProperties();
+    const propsText = Object.entries(props)
+      .map(([key, value]) => `${t(`product.${key}`)}: ${value}`)
+      .join('\n');
+    
+    const message = lang === 'ar'
+      ? `مرحبًا،\nأود طلب المنتج التالي:\n\n${product.name[lang]}\n${propsText}\n\nشكرًا.`
+      : `Hello,\nI would like to order:\n\n${product.name[lang]}\n${propsText}\n\nThank you.`;
+    
+    const whatsappUrl = `https://wa.me/97400000000?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <Layout>
@@ -132,12 +198,91 @@ const ProductDetail = () => {
               </p>
 
               {/* Price */}
-              <div className="mb-8">
+              <div className="mb-6">
                 <span className="text-sm text-muted-foreground">{t('product.price')}</span>
                 <p className="text-3xl font-bold text-foreground">
                   {product.price.toLocaleString()} <span className="text-lg">{t('currency')}</span>
                 </p>
               </div>
+
+              {/* Product Options */}
+              {hasOptions && (
+                <div className="mb-6 space-y-4">
+                  <h3 className="font-semibold text-foreground">{t('product.selectOptions')}</h3>
+                  
+                  {/* Color Selection */}
+                  {options.colors && (
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-muted-foreground">
+                        {t('product.color')} {!selectedColor && <span className="text-destructive">*</span>}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {options.colors.map((color) => (
+                          <button
+                            key={color.value}
+                            onClick={() => setSelectedColor(color.value)}
+                            className={`rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all ${
+                              selectedColor === color.value
+                                ? 'border-secondary bg-secondary/10 text-secondary'
+                                : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground'
+                            }`}
+                          >
+                            {color.label[lang]}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Storage Selection */}
+                  {options.storage && (
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-muted-foreground">
+                        {t('product.storage')} {!selectedStorage && <span className="text-destructive">*</span>}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {options.storage.map((storage) => (
+                          <button
+                            key={storage.value}
+                            onClick={() => setSelectedStorage(storage.value)}
+                            className={`rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all ${
+                              selectedStorage === storage.value
+                                ? 'border-secondary bg-secondary/10 text-secondary'
+                                : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground'
+                            }`}
+                          >
+                            {storage.label[lang]}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Size Selection */}
+                  {options.sizes && (
+                    <div>
+                      <label className="mb-2 block text-sm font-medium text-muted-foreground">
+                        {t('product.size')} {!selectedSize && <span className="text-destructive">*</span>}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {options.sizes.map((size) => (
+                          <button
+                            key={size.value}
+                            onClick={() => setSelectedSize(size.value)}
+                            className={`rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all ${
+                              selectedSize === size.value
+                                ? 'border-secondary bg-secondary/10 text-secondary'
+                                : 'border-border text-muted-foreground hover:border-foreground hover:text-foreground'
+                            }`}
+                          >
+                            {size.label[lang]}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Features */}
               <div className="mb-8">
@@ -157,16 +302,33 @@ const ProductDetail = () => {
                 </ul>
               </div>
 
-              {/* WhatsApp Order Button */}
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-hero w-full justify-center bg-[#25D366] hover:bg-[#20BD5A]"
-              >
-                <MessageCircle className="h-5 w-5" />
-                {t('product.orderNow')}
-              </a>
+              {/* Action Buttons */}
+              <div className="flex flex-col gap-3">
+                <Button
+                  onClick={handleWhatsAppOrder}
+                  disabled={!isOptionsComplete()}
+                  className="w-full gap-2 bg-[#25D366] hover:bg-[#20BD5A] disabled:opacity-50"
+                  size="lg"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  {t('product.orderNow')}
+                </Button>
+                <Button
+                  onClick={handleAddToCart}
+                  disabled={!isOptionsComplete()}
+                  variant="outline"
+                  className="w-full gap-2"
+                  size="lg"
+                >
+                  <ShoppingCart className="h-5 w-5" />
+                  {t('product.addToCart')}
+                </Button>
+                {!isOptionsComplete() && (
+                  <p className="text-center text-sm text-muted-foreground">
+                    {t('product.selectOptions')}
+                  </p>
+                )}
+              </div>
             </motion.div>
           </div>
 

@@ -1,7 +1,7 @@
 {
   "company": {
     "name": "Advanced Solutions Trading Company",
-    "slogan": "Premium Apple Products for Qatar"
+    "slogan": "Premium technology solutions for Qatar"
   },
   "nav": {
     "home": "Home",
@@ -9,13 +9,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Premium Apple Products",
-    "subtitle": "Discover the latest Apple technology in Doha",
+    "title": "Premium Technology Solutions",
+    "subtitle": "Discover carefully selected tech products to meet your business and personal needs",
     "cta": "Explore Products"
   },
   "featured": {
     "title": "Featured Products",
-    "subtitle": "Handpicked selection of premium Apple devices"
+    "subtitle": "Handpicked selection of premium devices"
   },
   "products": {
     "title": "Our Products",
@@ -36,7 +36,23 @@
     "price": "Price",
     "features": "Features",
     "orderNow": "Order via WhatsApp",
-    "related": "Related Products"
+    "addToCart": "Add to Cart",
+    "related": "Related Products",
+    "selectOptions": "Select Options",
+    "color": "Color",
+    "storage": "Storage",
+    "size": "Size",
+    "selectColor": "Select a color",
+    "selectStorage": "Select storage",
+    "selectSize": "Select a size"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "orderViaWhatsApp": "Send Order via WhatsApp",
+    "clear": "Clear Cart",
+    "itemAdded": "Added to cart"
   },
   "value": {
     "warranty": {
